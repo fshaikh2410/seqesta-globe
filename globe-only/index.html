@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Seqesta — Globe (standalone)</title>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #d5eee2; }
+  #world { position: absolute; inset: 0; }
+  #world canvas { display: block; width: 100%; height: 100%; touch-action: none; }
+  #hint {
+    position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
+    font: 12px system-ui, sans-serif; color: #47614f; pointer-events: none;
+  }
+</style>
+</head>
+<body>
+<div id="world"></div>
+<div id="hint">Drag to rotate · Scroll or pinch to zoom</div>
+<script type="module">
+  import { LivingWorld } from './globe.js';
+
+  const container = document.getElementById('world');
+  try {
+    new LivingWorld(container, {
+      onSelect: (type) => console.log('selected:', type), // 'tree' | 'companion'
+      onFocus: (focused) => console.log('focused:', focused),
+      onError: () => console.error('World failed to start — WebGL unavailable?'),
+    });
+  } catch (err) {
+    console.error('World could not start:', err);
+  }
+</script>
+</body>
+</html>
