@@ -1,17 +1,16 @@
-# Seqesta — living world globe (reference)
+# Seqesta - living world globe (reference)
 
-A small, self-contained 3D "living world" globe — procedurally generated terrain, a
-digital tree, a companion character, ambient fireflies — built as a reference for a
-developer to lift into their own app.
+A small, self-contained 3D "living world" globe — procedural terrain, a
+digital tree, a companion character, ambient fireflies — built as a reference
 
-**No framework, no build step.** It's plain ES modules on top of [Three.js](https://threejs.org)
+It's plain ES modules on top of [Three.js](https://threejs.org)
 r180 (vendored locally in `vendor/`, MIT licensed — see `vendor/THREE-LICENSE.txt`).
 Because it's framework-agnostic, it should drop into React, Vue, Svelte, plain HTML,
 or anything else with a `<script type="module">` and a container element.
 
 ## What's in here
 
-- **`globe-only/`** — just the globe, isolated. The minimal way to see and lift the
+- **`globe-only/`** — the globe, isolated. The minimal way to see and lift the
   3D component on its own, without any surrounding app UI.
 - **`full-app/`** — the whole Seqesta prototype (steps, tree progress, rewards, nav)
   so you can see the globe in its intended product context.
