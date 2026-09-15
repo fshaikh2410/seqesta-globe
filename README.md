@@ -29,7 +29,7 @@ python3 -m http.server 4173
 
 Then open `http://localhost:4173`.
 
-## Using the globe in your own app
+## Using the globe in Seqesta
 
 The whole component is one class, `LivingWorld`, exported from `globe.js`:
 
